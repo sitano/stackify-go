@@ -95,6 +95,14 @@ func CreateReportFromMessages(events []*Event) *Report {
 	}
 }
 
+func CreateEvent(level EventType, msg string) *Event {
+	return &Event{
+		Message: msg,
+		Level: level,
+		Time: time.Now().UnixNano() / int64(time.Millisecond),
+	}
+}
+
 func (a *API) Send(report *Report) (*Response, error) {
 	js, err := json.Marshal(report)
 	if err != nil {
