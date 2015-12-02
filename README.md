@@ -10,6 +10,7 @@ The [Stackify API](https://github.com/stackify/stackify-api/blob/master/endpoint
 package main
 
 import (
+	"flag"
 	"log"
 
 	"github.com/sitano/stackify-go"
